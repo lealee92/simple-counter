@@ -3,16 +3,6 @@ import React, { useState } from "react";
 const Counter = () => {
   const [counter, setCounter] = useState(0);
 
-  // const button = document.querySelector(".desc");
-  // button.disabled = true;
-  // function stateButton() {
-  //   if (button.value === 0) {
-  //     button.disabled = true;
-  //   } else {
-  //     button.disabled = false;
-  //   }
-  // }
-
   return (
     <div className="container">
       <div className="counter-container">
@@ -25,9 +15,11 @@ const Counter = () => {
           }}
           className="desc"
           onClick={() => setCounter((count) => count - 1)}
+          disabled={counter === 0}
         >
           {/* count va update le state au nv state  */}-
         </button>
+
         <div className="counter">{counter}</div>
         <button
           style={{
@@ -39,6 +31,7 @@ const Counter = () => {
           className="inc"
           type={"button"}
           onClick={() => setCounter((count) => count + 1)}
+          disabled={counter === 10}
         >
           +
         </button>
